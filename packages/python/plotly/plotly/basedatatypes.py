@@ -7,6 +7,7 @@ from copy import deepcopy, copy
 import itertools
 from functools import reduce
 
+import plotly.io as pio
 from _plotly_utils.utils import (
     _natural_sort_strings,
     _get_int_type,
@@ -813,7 +814,6 @@ class BaseFigure(object):
         """
         Return mimebundle corresponding to default renderer.
         """
-        import plotly.io as pio
 
         renderer_str = pio.renderers.default
         renderers = pio._renderers.renderers
@@ -826,7 +826,6 @@ class BaseFigure(object):
         """
         Handle rich display of figures in ipython contexts
         """
-        import plotly.io as pio
 
         if pio.renderers.render_on_display and pio.renderers.default:
             pio.show(self)
@@ -2513,7 +2512,6 @@ Please use the add_trace method with the row and col parameters.
     # Layout
     # ------
     def _initialize_layout_template(self):
-        import plotly.io as pio
 
         if self._layout_obj._props.get("template", None) is None:
             if pio.templates.default is not None:
@@ -3405,7 +3403,6 @@ Invalid property path '{key_path_str}' for layout
         -------
         None
         """
-        import plotly.io as pio
 
         return pio.show(self, *args, **kwargs)
 
@@ -3438,7 +3435,6 @@ Invalid property path '{key_path_str}' for layout
         str
             Representation of figure as a JSON string
         """
-        import plotly.io as pio
 
         return pio.to_json(self, *args, **kwargs)
 
@@ -3467,7 +3463,6 @@ Invalid property path '{key_path_str}' for layout
         plotly.graph_objects.Figure or dict
             The full figure
         """
-        import plotly.io as pio
 
         return pio.full_figure_for_development(self, warn, as_dict)
 
@@ -3500,7 +3495,6 @@ Invalid property path '{key_path_str}' for layout
         -------
         None
         """
-        import plotly.io as pio
 
         return pio.write_json(self, *args, **kwargs)
 
@@ -3597,7 +3591,6 @@ Invalid property path '{key_path_str}' for layout
         str
             Representation of figure as an HTML div string
         """
-        import plotly.io as pio
 
         return pio.to_html(self, *args, **kwargs)
 
@@ -3709,7 +3702,6 @@ Invalid property path '{key_path_str}' for layout
         -------
         None
         """
-        import plotly.io as pio
 
         return pio.write_html(self, *args, **kwargs)
 
@@ -3767,7 +3759,6 @@ Invalid property path '{key_path_str}' for layout
         bytes
             The image data
         """
-        import plotly.io as pio
 
         return pio.to_image(self, *args, **kwargs)
 
@@ -3830,7 +3821,6 @@ Invalid property path '{key_path_str}' for layout
         -------
         None
         """
-        import plotly.io as pio
 
         return pio.write_image(self, *args, **kwargs)
 
@@ -5630,7 +5620,6 @@ on_change callbacks are not supported in this case.
         str
             Representation of object as a JSON string
         """
-        import plotly.io as pio
 
         return pio.to_json(self, *args, **kwargs)
 
